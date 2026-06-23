@@ -1,0 +1,72 @@
+{
+  "geode": "5.7.1",
+  "gd": {
+    "win": "2.2081",
+    "android": "2.2081"
+  },
+  "id": "sybau2999.viewport_culling",
+  "name": "More viewport Culling",
+  "version": "1.0.0",
+  "developers": ["sybau2999"],
+  "description": "Significantly boosts FPS on heavy levels by hiding small off-screen objects. Safe: never touches triggers, and automatically restores visibility when objects come back into view.",
+  "repository": "https://github.com/sybau2999/viewport-culling-mod",
+  "links": {
+    "homepage": "https://github.com/sybau2999/viewport-culling-mod",
+    "source": "https://github.com/sybau2999/viewport-culling-mod"
+  },
+  "tags": [
+    "performance",
+    "optimization",
+    "culling",
+    "fps boost",
+    "low-end"
+  ],
+  "settings": {
+    "enable_culling": {
+      "type": "bool",
+      "default": true,
+      "name": "Enable Culling",
+      "description": "Master toggle for the culling system."
+    },
+    "cull_padding_x": {
+      "type": "float",
+      "default": 180.0,
+      "min": 50.0,
+      "max": 500.0,
+      "name": "Horizontal Padding",
+      "description": "Extra horizontal margin added to the visible area. Lower values hide objects closer to the screen edge."
+    },
+    "cull_padding_y": {
+      "type": "float",
+      "default": 130.0,
+      "min": 50.0,
+      "max": 500.0,
+      "name": "Vertical Padding",
+      "description": "Extra vertical margin added to the visible area."
+    },
+    "check_period": {
+      "type": "int",
+      "default": 4,
+      "min": 1,
+      "max": 10,
+      "name": "Update Frequency",
+      "description": "How often (in frames) the culling logic runs. Higher values reduce CPU usage but may cause slight pop-in."
+    },
+    "change_threshold": {
+      "type": "float",
+      "default": 70.0,
+      "min": 10.0,
+      "max": 200.0,
+      "name": "Movement Threshold",
+      "description": "Minimum camera movement (in units) required before re-running culling. Higher values save CPU when the camera is still."
+    },
+    "max_small_size": {
+      "type": "float",
+      "default": 400.0,
+      "min": 50.0,
+      "max": 1000.0,
+      "name": "Small Object Max Size",
+      "description": "Objects smaller than this (width or height) are considered 'decorative' and can be hidden even if they belong to groups."
+    }
+  }
+}
